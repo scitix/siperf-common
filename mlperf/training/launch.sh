@@ -13,11 +13,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 TEST_DIR=$(cd $(dirname $0) && pwd)
 export CUDA_DEVICE_MAX_CONNECTION=1
 export ENABLE_RERUNS=1
 export CREATE_TENSORBOARD_LOGGER=True
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export GRADIENT_ACCUMULATION_STEPS=2
-source $TEST_DIR/eos_n32_ngc24.09_nemo/config_DGXH100_32x8x256x4x8_mbs2.sh
+source $TEST_DIR/config_DGXH100_32x8x256x4x8_mbs2.sh
 bash $TEST_DIR/mpirun2pytorch $TEST_DIR/run_and_time_scitix.sh
