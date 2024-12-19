@@ -1,2 +1,1 @@
-# siperf-common
-Launching, tuning and monitoring tools and scripts for benchmarking at Scitix
+# SiPerf Common - A collection of common benchmarking tools
